@@ -1,0 +1,30 @@
+# Java / Maven / Spring Boot
+backend/target/
+backend/*.jar
+backend/data/
+*.mv.db
+*.trace.db
+*.class
+*.log
+
+# Node / Vite / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+yarn-error.log*
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# IDE & OS
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+.settings/
+.DS_Store
+Thumbs.db

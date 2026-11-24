@@ -1,0 +1,13 @@
+package com.placement.analytics;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class PlacementReadinessAnalyticsApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(PlacementReadinessAnalyticsApplication.class, args);
+	}
+
+}

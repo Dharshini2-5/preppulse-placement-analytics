@@ -1,0 +1,23 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: preppulse-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: placement_readiness_db
+      MYSQL_USER: preppulse
+      MYSQL_PASSWORD: preppulse123
+      MYSQL_ROOT_PASSWORD: rootpassword123
+    ports:
+      - "3306:3306"
+    volumes:
+      - preppulse_mysql_data:/var/lib/mysql
+      - ./mysql-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prootpassword123"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  preppulse_mysql_data:
